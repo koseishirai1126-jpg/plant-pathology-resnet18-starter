@@ -2,7 +2,7 @@
 
 ImageNetで学習済みのResNet18を使い、リンゴの葉の画像を4クラスに分類します。基本モデルを動かし、学習・検証・Kaggle提出までを一度通してから、各自の仮説を試します。
 
-![ResNet18のモデル構成と学習・推論の流れ](docs/resnet18.png)
+![葉の画像から4クラスを予測する流れ](docs/resnet18.png)
 
 | 比較用モデル | Kaggle Private | Kaggle Public |
 | --- | ---: | ---: |

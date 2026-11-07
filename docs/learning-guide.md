@@ -6,7 +6,7 @@
 | --- | --- | --- | --- |
 | 1 | 第2章。第1章は必要な箇所を復習 | `check_dataset.py` で画像1枚とラベルを表示する | 画像の形は `[3, 224, 224]`。RGBの3チャンネルを持つ |
 | 2 | 第3〜4章、第7章 | `train.py` の `train_one_epoch` を読んで、予測・損失・逆伝播・更新を追う | 4つのlogitと正解クラス番号から損失を計算する |
-| 3 | 第8〜9章 | `check_dataloader.py` で画像をまとめ、モデル図でCNNの出力を追う | 入力は `[B, 3, 224, 224]`。ResNet18が最後に使う特徴は画像1枚あたり512個 |
+| 3 | 第8〜9章 | `check_dataloader.py` で画像をまとめ、モデル図で画像から予測までを確認する | 入力は `[B, 3, 224, 224]`。先頭の `B` はバッチ内の画像数 |
 | 4 | 第11章 | `model.py` で分類層を読み、`check_model.py` を実行する | 512個の特徴を4クラスのlogitへ変換する |
 | 5 | 第12章 | `dataset.py` と `data_loading.py` を読み、1エポックだけ学習する | 画像ID・画像・ラベルが対応し、学習と検証の画像が分かれている |
 | 6 | 第12章の応用 | 5エポック学習し、保存重みの確認とKaggle用の予測を行う | 検証AUCで重みを選び、テスト画像ごとに4クラスの確率を提出する |
@@ -27,7 +27,7 @@ python check_dataloader.py
 
 ## 画像から4つのスコアへ
 
-![ResNet18の構成と学習・推論の流れ](resnet18.png)
+![葉の画像から4クラスを予測する流れ](resnet18.png)
 
 `model.py` の `get_preprocess` が、短辺を256にリサイズし、中央224×224を切り出して、テンソル化と正規化を行います。`build_model` はImageNet学習済みResNet18を読み込み、最後の層を `Linear(512, 4)` に置き換えます。演習ではResNet18全体を更新します。モデル確認用のコマンドはダウンロードなしで入出力の形を確かめられます。[torchvisionのResNet18](https://docs.pytorch.org/vision/0.25/models/generated/torchvision.models.resnet18.html)
 
