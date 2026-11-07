@@ -1,0 +1,5 @@
+# torch と torchvision は計算機の環境に合う組を先に用意する。
+numpy
+pandas
+Pillow
+scikit-learn

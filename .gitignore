@@ -1,0 +1,35 @@
+# Kaggleのデータ（data/に配置する）
+/data/
+*.zip
+
+# 学習結果・学習済み重み・提出ファイル
+/outputs/
+/runs/
+/wandb/
+*.pt
+*.pth
+*.ckpt
+submission*.csv
+
+# 認証情報・ローカル設定
+.env
+.env.*
+!.env.example
+kaggle.json
+.kaggle/
+.ssh/
+.aws/
+
+# Pythonの仮想環境・キャッシュ
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.ruff_cache/
+
+# OSが生成するファイル
+.DS_Store
+Thumbs.db
+Desktop.ini
