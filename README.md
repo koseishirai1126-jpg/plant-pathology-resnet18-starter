@@ -29,6 +29,7 @@ plant-pathology-resnet18-starter/
 ├── check_dataloader.py      # 画像をまとめたバッチの形を確認する
 ├── check_model.py           # モデルに画像を渡し、出力の形を確認する
 └── docs/
+    ├── how-it-works.md      # 画像から予測が出る仕組みと、重みを学習する理由
     ├── learning-guide.md    # 参考書に沿った演習の進め方
     └── resnet18.png         # モデルの全体図
 ```
@@ -86,3 +87,5 @@ outputs/baseline_01/
 ## 学習ガイド
 
 参考書の章に合わせて実際のコードを読み、小さい確認から順に進めます。[PyTorch学習ガイド（仮版）](docs/learning-guide.md)
+
+画像と正解が学習に使われ、保存した重みで分類結果を出すまでを、コードと対応させて説明しています。[画像から分類結果が出るまで](docs/how-it-works.md)
